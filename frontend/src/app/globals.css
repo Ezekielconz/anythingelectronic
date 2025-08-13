@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Light mode defaults */
+:root {
+  --background: #FFFFFF;      /* white */
+  --foreground: #0A0A0A;      /* near-black for readability */
+
+  /* Brand */
+  --color-primary: #184E8E;   /* deep blue */
+  --color-accent:  #1CB7F8;   /* sky blue (use for borders/hover/fills, not body text) */
+
+  /* Accessible accent shades for text/hover on light bg */
+  --color-accent-600: #1277A1; /* white on this meets AA (≈5.03:1) */
+  --color-accent-700: #116E95;
+
+  /* Subtle UI */
+  --color-border: color-mix(in oklab, var(--color-primary), white 80%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-border: var(--color-border);
+
+  --font-sans: var(--font-geist-sans, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji");
+  --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, "Liberation Mono", monospace);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0A0A0A;
+    --foreground: #EDEDED;
+
+    /* Keep accent bright; adjust borders for dark UI */
+    --color-border: color-mix(in oklab, var(--color-primary), black 70%);
+  }
+}
+
+/* Base */
+html, body {
+  height: 100%;
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
