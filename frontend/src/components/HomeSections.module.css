@@ -1,0 +1,139 @@
+.section {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.titleRow {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.title {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  color: var(--color-foreground);
+}
+.sub {
+  color: color-mix(in oklab, var(--color-foreground), transparent 35%);
+  max-width: 65ch;
+}
+
+/* Services cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+.card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+.card:hover {
+  border-color: var(--color-accent-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.iconWrap {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in oklab, var(--color-primary) 10%, white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+.cardTitle {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.cardText {
+  margin-top: 0.5rem;
+  color: color-mix(in oklab, var(--color-foreground), transparent 30%);
+}
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.cardLink:hover,
+.cardLink:focus-visible {
+  color: var(--color-accent-700);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Process timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .timeline {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+.step {
+  position: relative;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+.stepNum {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent-700);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.stepTitle {
+  margin-top: 0.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+.stepText {
+  margin-top: 0.35rem;
+  color: color-mix(in oklab, var(--color-foreground), transparent 35%);
+}
+
+/* CTA band */
+.cta {
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklab, var(--color-primary) 8%, white) 0%,
+      white 70%);
+}
+.ctaTitle {
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+.ctaText {
+  color: color-mix(in oklab, var(--color-foreground), transparent 30%);
+  margin-top: 0.25rem;
+}
+.ctaRow {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

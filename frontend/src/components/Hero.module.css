@@ -1,0 +1,49 @@
+.wrap {
+  /* roomy, responsive spacing */
+  padding-block: clamp(2.5rem, 4vw, 5rem);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.title {
+  margin-top: 0; /* no kicker now */
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(1.9rem, 1.2rem + 2.5vw, 3rem);
+  color: var(--color-foreground);
+}
+
+.title strong {
+  color: var(--color-primary);
+}
+
+.ctaRow {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Right media block — intrinsic image, no enforced aspect ratio */
+.media {
+  /* no fixed height, no aspect-ratio, no overflow */
+}
+
+.mediaImg {
+  display: block;
+  width: 100%;
+  height: auto;         /* keep full image visible */
+  border-radius: 1rem;  /* optional: remove if you want square corners */
+  transform: scaleX(-1);
+}

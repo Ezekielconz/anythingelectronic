@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  text-align: center;               /* center text in all cols */
 }
 @media (min-width: 768px) {
   .grid {
@@ -23,21 +24,20 @@
 .brandLeft {
   display: grid;
   align-content: start;
+  justify-items: center;            /* center contents horizontally */
   gap: 0.5rem;
 }
 .logoRow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  justify-content: center;          /* center inline-flex row */
 }
-.logoDot {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 0.375rem;
-  background: #fff;
-  outline: 2px solid rgba(28, 183, 248, 0.35); /* accent halo */
+.logoImg {
+  display: block;
+  height: clamp(36px, 5vw, 48px);
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;                   /* center the image block */
 }
 .copy {
   color: rgba(255, 255, 255, 0.85);
@@ -47,7 +47,14 @@
 /* Middle column */
 .contact {
   display: grid;
-  justify-items: start;
+  gap: 0.35rem;
+  justify-items: center;            /* center links/address */
+  text-align: center;
+}
+.address {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.9);
+  display: grid;
   gap: 0.25rem;
 }
 .link {
@@ -75,12 +82,7 @@
 /* Right column */
 .brandRight {
   display: flex;
-  justify-content: flex-start;
-}
-@media (min-width: 768px) {
-  .brandRight {
-    justify-content: flex-end;
-  }
+  justify-content: center;          /* center the mark */
 }
 .logoMark {
   width: 2rem;

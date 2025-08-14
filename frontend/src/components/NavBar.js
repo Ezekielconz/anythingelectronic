@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import styles from './NavBar.module.css';
@@ -16,7 +17,6 @@ export default function NavBar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // close mobile menu on route change
   useEffect(() => setOpen(false), [pathname]);
 
   const isActive = (href) =>
@@ -25,14 +25,22 @@ export default function NavBar() {
   return (
     <header className={styles.header}>
       <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${styles.container}`}>
-        <nav className="flex h-16 items-center justify-between" aria-label="Primary">
-          {/* Brand */}
+        {/* grid bar: brand | links (center) | actions */}
+        <nav className={styles.bar} aria-label="Primary">
+          {/* Brand with image logo */}
           <Link href="/" className={styles.brand}>
-            <span aria-hidden className={styles.logoDot}></span>
-            <span className="text-sm md:text-base">Anything Electronic</span>
+            <Image
+              src="/images/logo.svg"
+              alt="Anything Electronic"
+              width={260}
+              height={72}
+              priority
+              className={styles.logoImg}
+              sizes="(min-width: 768px) 260px, 180px"
+            />
           </Link>
 
-          {/* Desktop links (no CTA) */}
+          {/* Desktop links (centered) */}
           <div className={styles.links}>
             {LINKS.map((l) => {
               const active = isActive(l.href);
@@ -42,7 +50,6 @@ export default function NavBar() {
                   href={l.href}
                   aria-current={active ? 'page' : undefined}
                   className={[
-                    'px-3 py-2 text-sm transition-colors',
                     styles.link,
                     active ? styles.active : '',
                   ].join(' ')}
@@ -53,32 +60,34 @@ export default function NavBar() {
             })}
           </div>
 
-          {/* Mobile toggle (hidden on desktop via CSS module) */}
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            className={styles.toggle}
-          >
-            <span className="sr-only">Toggle navigation</span>
-            {open ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden>
-                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden>
-                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            )}
-          </button>
+          {/* Actions (mobile toggle) */}
+          <div className={styles.actions}>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              className={styles.toggle}
+            >
+              <span className="sr-only">Toggle navigation</span>
+              {open ? (
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden>
+                  <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden>
+                  <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile panel */}
         <div
           id="mobile-nav"
           className={styles.mobile}
-          style={{ display: open ? 'block' : 'none' }}  /* robust toggle */
+          style={{ display: open ? 'block' : 'none' }}
         >
           <div className={styles.mobileList}>
             {LINKS.map((l) => {
@@ -89,7 +98,6 @@ export default function NavBar() {
                   href={l.href}
                   aria-current={active ? 'page' : undefined}
                   className={[
-                    'px-3 py-2 text-base',
                     styles.mobileLink,
                     active ? styles.mobileActive : '',
                   ].join(' ')}

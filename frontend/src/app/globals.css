@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
-/* Light mode defaults */
+/* Site theme — light by default */
 :root {
-  --background: #FFFFFF;      /* white */
-  --foreground: #0A0A0A;      /* near-black for readability */
+  color-scheme: light;                 /* keep the site light even if OS is dark */
+  --background: #FFFFFF;               /* page background */
+  --foreground: #0A0A0A;               /* text (near-black) */
 
   /* Brand */
-  --color-primary: #184E8E;   /* deep blue */
-  --color-accent:  #1CB7F8;   /* sky blue (use for borders/hover/fills, not body text) */
+  --color-primary: #184E8E;            /* deep blue */
+  --color-accent:  #1CB7F8;            /* sky blue */
 
   /* Accessible accent shades for text/hover on light bg */
-  --color-accent-600: #1277A1; /* white on this meets AA (≈5.03:1) */
+  --color-accent-600: #1277A1;         /* good contrast for hover/text */
   --color-accent-700: #116E95;
 
-  /* Subtle UI */
+  /* Subtle UI (borders on white) */
   --color-border: color-mix(in oklab, var(--color-primary), white 80%);
 }
 
@@ -31,23 +32,19 @@
   --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, "Liberation Mono", monospace);
 }
 
-/* Dark mode */
+/* OPTIONAL: keep the site light even for users with dark preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0A0A0A;
-    --foreground: #EDEDED;
-
-    /* Keep accent bright; adjust borders for dark UI */
+    --background: #FFFFFF;             /* stay light */
+    --foreground: #0A0A0A;             /* keep text near-black */
     --color-border: color-mix(in oklab, var(--color-primary), black 70%);
   }
 }
 
 /* Base */
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background);       /* was flipped — fixed */
+  color: var(--foreground);            /* was flipped — fixed */
   font-family: var(--font-sans);
 }
