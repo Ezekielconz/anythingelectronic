@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "glow-timers",
+    "title": "Glow Timers",
+    "blurb": "Reliable diesel glow control modules.",
+    "items": [
+      {
+        "name": "VT1 Series",
+        "price": "NZ$129",
+        "description": "12–24V diesel glow plug timer with configurable pre/post glow.",
+        "imageSrc": "/images/products/vt1.png",
+        "pdfHref": "/pdf/vt1.pdf"
+      },
+      {
+        "name": "VT1-24",
+        "price": "NZ$139",
+        "description": "24V variant for heavy-duty applications.",
+        "imageSrc": "/images/products/vt1-24.png",
+        "pdfHref": "/pdf/vt1-24.pdf"
+      },
+      {
+        "name": "VT1-12D",
+        "price": "NZ$149",
+        "description": "12V, delay-start model for older diesel systems.",
+        "imageSrc": "/images/products/vt1-12d.png",
+        "pdfHref": "/pdf/vt1-12d.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "lighting",
+    "title": "Lighting",
+    "blurb": "12–24V lighting controllers & modules.",
+    "items": [
+      {
+        "name": "DRL Controller",
+        "price": "NZ$79",
+        "description": "Daytime running light controller with auto-dim on headlight signal.",
+        "imageSrc": "/images/products/drl.png",
+        "pdfHref": "/pdf/drl.pdf"
+      },
+      {
+        "name": "Tail/Stop Controller",
+        "price": "NZ$69",
+        "description": "Dual-intensity control for tail and stop lamps.",
+        "imageSrc": "/images/products/tail-stop.png",
+        "pdfHref": "/pdf/tail-stop.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "performance",
+    "title": "Performance",
+    "blurb": "Charging and performance accessories.",
+    "items": [
+      {
+        "name": "Charge Rite",
+        "price": "NZ$89",
+        "description": "Improved charging stability for auxiliary systems.",
+        "imageSrc": "/images/products/charge-rite.png",
+        "pdfHref": "/pdf/charge-rite.pdf"
+      },
+      {
+        "name": "Rev Limiter",
+        "price": "NZ$119",
+        "description": "Configurable soft-cut rev limiter.",
+        "imageSrc": "/images/products/rev-limiter.png",
+        "pdfHref": "/pdf/rev-limiter.pdf"
+      }
+    ]
+  },
+  { "slug": "sensor", "title": "Sensor", "blurb": "Vehicle & trailer sensor add-ons.", "items": [] },
+  { "slug": "tacho", "title": "Tacho", "blurb": "Tachometer adapters & pickups.", "items": [] },
+  { "slug": "test-equipment", "title": "Test Equipment", "blurb": "Benchtop testers and looms.", "items": [] },
+  { "slug": "trailer-lighting", "title": "Trailer Lighting", "blurb": "Trailer/ute lighting control modules.", "items": [] },
+  { "slug": "turbo-timers", "title": "Turbo Timers", "blurb": "Safe turbo cooldown timers.", "items": [] },
+  { "slug": "voltage-reducers", "title": "Voltage Reducers", "blurb": "Drop 24V → 12V for accessories.", "items": [] },
+  { "slug": "other", "title": "Other", "blurb": "Misc modules and accessories.", "items": [] }
+]
